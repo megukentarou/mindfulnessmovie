@@ -3,7 +3,7 @@ class MoviesController < ApplicationController
   before_action :move_to_index, except: [:index, :show]
 
   def index
-    @movies = Movie.all
+    @movies = Movie.includes(:user).order("created_at DESC").page(params[:page]).per(5)
   end
 
   def new
@@ -32,10 +32,14 @@ class MoviesController < ApplicationController
 
   private
   def movie_params
-    params.require(:movie).permit(:title, :url, :text, :time)
+    params.require(:movie).permit(:title, :url, :text, :time).merge(user_id: current_user.id)
   end
 
   def set_movie
     @movie = Movie.find(params[:id])
+  end
+
+  def move_to_index
+    redirect_to action: :index unless user_signed_in?
   end
 end

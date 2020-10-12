@@ -1,0 +1,9 @@
+<h4>動画のタイトル</h4>
+<%= form.text_field :title, placeholder: "動画のタイトルを入力してください" %>
+<h4>動画の説明欄</h4>
+<%= form.text_area :text, placeholder: "動画の説明を入力してください", rows: "10" %>
+<h4>動画のURL</h4>
+<%= form.text_field :url, placeholder: "動画のURLを入力してください" %>
+<h4>動画の長さ</h4>
+<%= form.select :time, {'~10分まで': 1, '10~30分程度': 2, '30~60分程度': 3, '1時間以上': 4}, { include_blank: '動画の長さ選択してください'} %>
+<%= form.submit "保存する" %>
