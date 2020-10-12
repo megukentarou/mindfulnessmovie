@@ -19,4 +19,12 @@
       <span>投稿者</span><%= @movie.user.nickname %>
     </span>
   </div>
+  <div class="container">
+    <% if current_user %>
+        <%= link_to "お気に入りに登録する" %>
+    <% else %>
+      <strong><p>※※※ コメントの投稿には新規登録/ログインが必要です ※※※</p></strong>
+    <% end %>
+  </div>
+
 </div>
