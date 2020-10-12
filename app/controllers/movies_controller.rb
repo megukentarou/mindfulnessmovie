@@ -1,6 +1,6 @@
 class MoviesController < ApplicationController
   before_action :set_movie, only: [:edit, :show]
-
+  before_action :move_to_index, except: [:index, :show]
 
   def index
     @movies = Movie.all
