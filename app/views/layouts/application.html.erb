@@ -35,7 +35,9 @@
               </li>
             </ul>
             </span>
-            <%= link_to  "投稿する", "/movies/new", class: "post" %>
+            <% if current_user.id == 5 %>
+              <%= link_to  "投稿", "/movies/new", class: "post" %>
+            <% end %>
           </div>
         <% else %>
           <div class="grid-6">
