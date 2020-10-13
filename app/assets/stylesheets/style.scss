@@ -211,8 +211,9 @@ header.header {
   }
 }
 div.contents.row {
-  margin-top: 20px;
-  margin-bottom: 60px;
+  padding-top: 20px;
+  padding-bottom: 60px;
+  background: #57C3E9;
   h2 {
     @include boxBase(20px 0, 0);
     font-weight: normal;
@@ -401,23 +402,41 @@ footer {
   }
 }
 
+.field {
+  margin-top: 20px;
+}
 .contents {
   background: white;
+  padding: 0 20px;
 }
 
 // 詳細・編集・削除
-.contents-edit a{
-  font-size: 20px;
-  padding: 5px;
-  border-radius: 3px;
-
+.contents-edit {
+  margin-bottom: 60px;
+   a{
+    font-size: 20px;
+    padding: 5px 0;
+    border-radius: 3px;
+  }
+  p {
+    margin: 0;
+  }
 }
 .contents-text {
   border: 1px solid $darkGray;
-  width: 80%;
+  width: 560px;
   border-radius: 3px;
   padding: 5px 10px;
   p {
     margin: 0;
   }
+}
+
+// フェードイン機能
+.fade{
+  animation: fadeIn 1.2s ease 0.1s normal;
+}
+@keyframes fadeIn { 
+  0% {opacity: 0} /*アニメーション開始時は不透明度0%*/
+  100% {opacity: 1} /*アニメーション終了時は不透明度100%*/
 }
