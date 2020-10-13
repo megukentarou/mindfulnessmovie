@@ -24,18 +24,20 @@
   <body>
     <header class="header">
       <div class="header__bar row">
-        <h1 class="grid-6"><a href="/">マインドフルネス動画集</a></h1>
+        <h2 class="grid-6"><a href="/">マインドフルネス動画集 TOPへ</a></h2>
         <% if user_signed_in? %>
           <div class="user_nav grid-6">
-            <span><%= current_user.nickname %>
+            <span>ユーザー名<br /><%= current_user.nickname %>
             <ul class="user__info">
               <li>
-                <%= link_to "マイページ", "/users/#{current_user.id}" %>
+                <%= link_to "お気に入り", "/users/#{current_user.id}" %>
                 <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
               </li>
             </ul>
             </span>
-            <%= link_to  "投稿する", "/movies/new", class: "post" %>
+            <% if current_user.id == 5 %>
+              <%= link_to  "投稿", "/movies/new", class: "post" %>
+            <% end %>
           </div>
         <% else %>
           <div class="grid-6">
@@ -49,6 +51,9 @@
     <%= yield %>
 
     <footer>
+      <p>
+        <%= link_to "TOPにもどる", "/" %>
+      </p>
       <p>
         マインドフルネス動画集
       </p>
