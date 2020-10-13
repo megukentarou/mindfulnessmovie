@@ -4,7 +4,7 @@
     <iframe width="560" height="315" src="https://www.youtube.com/embed/<%= movie.url%>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
   </div>
   <div class="contents-text">
-    <span>動画の説明: <%= simple_format(movie.text) %></span>
+    <span>動画の説明<%= simple_format(movie.text) %></span>
   </div>
   <div class="contents-edit">
     <%= link_to '詳細を見る', "/movies/#{movie.id}", method: :get %>
@@ -14,9 +14,9 @@
     <% end %>
     <% if user_signed_in? %>
       <% if movie.favorited_by?(current_user) %> <!-- ログインしているユーザーがファボしたかどうかで分岐 -->
-          <p><span>お気に入りから解除 <%=link_to movie.favorites.count, movie_favorites_path(movie.id), method: :delete %></p>
+        <p><span>お気に入りから解除<%=link_to movie.favorites.count, movie_favorites_path(movie.id), method: :delete %></p>
       <% else %>
-          <p><span>お気に入り登録する </span><%=link_to movie.favorites.count, movie_favorites_path(movie.id), method: :post %></p>
+        <p><span>お気に入り登録する</span><%=link_to movie.favorites.count, movie_favorites_path(movie.id), method: :post %></p>
       <% end %>
     <% end %>
   </div>

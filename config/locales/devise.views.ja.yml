@@ -88,3 +88,10 @@ ja:
     unlocks:
       new:
         resend_unlock_instructions: "アカウントの凍結解除方法を再送する"
+  views:
+      pagination:
+        first: '最初へ'
+        last: '最後へ'
+        previous: '前へ'
+        next: '次へ'
+        truncate: '...'
