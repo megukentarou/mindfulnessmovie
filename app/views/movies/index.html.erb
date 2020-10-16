@@ -1,4 +1,17 @@
 <div class="contents row">
+     <%# 選択機能を付けて動画の絞り込みを行う %>
+    <div class="cp_ipselect" >
+      時間の長さから選択する
+      <%= form_with model: @movie, method: :get, local: true do |f| %>
+        <div class="cp_ipselect.cp_sl02">
+          <%= f.select :time, [["~10分まで", 1],["10~30分程度", 2],["30~60分程度",3],["60分以上",4]] %>
+          <div class="contents__btn" >
+            <%= f.submit '動画を検索する', class: :resarch %>
+            <%= link_to "全動画を表示する", "movies", class: :allmovies %>
+          </div>
+        </div>
+      <% end %>
+    </div>
   <% @movies.each do |movie| %>
     <%= render partial: "movie", locals: { movie: movie } %>
     

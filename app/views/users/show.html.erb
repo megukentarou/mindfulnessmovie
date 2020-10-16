@@ -1,8 +1,7 @@
 <div class="contents row">
-  <p><%= @nickname %>さんのお気に入り一覧</p>
-
-  <% @favorite_movies.each do |movie| %>
-    <%= render partial: "movies/movie", locals: { movie: movie } %>
+  <p><%= @user.nickname %>さんのお気に入り一覧</p>
+  <% @user.favorites.each do |movie|%>
+    <%= render partial: "movies/movie", locals: { movie: movie.movie } %>
   <% end %>
-  <%= paginate(@favorite_movies) %>
+    
 </div>

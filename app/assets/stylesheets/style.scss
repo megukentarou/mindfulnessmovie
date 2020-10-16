@@ -43,7 +43,7 @@ body,html {
 }
 
 body {
-  padding-top: 60px;
+  padding-top: 100px;
 }
 
 h1,h2,h3,h4,h5,h6,body {
@@ -78,6 +78,10 @@ a {
 
 ::selection {
   background: $gray;
+}
+
+::placeholder {
+  color: $darkGray;
 }
 
 .transition {
@@ -118,9 +122,10 @@ h1,h2,h3,h4,h5,h6 {
   }
 }
 
-
 header.header {
   @include basePadding;
+  padding: 0;
+  margin-bottom: 20px;
   border-bottom: 1px solid $gray;
   background-color: #fff;
   position: fixed;
@@ -128,9 +133,9 @@ header.header {
   left: 0;
   right: 0;
   z-index: 5;
-  height: 80px;
+  height: 100px;
   div.header__bar.row {
-    position: relative;
+    align-items: center;
     h1.grid-6 {
       font-size: 20px;
       line-height: 41px;
@@ -140,8 +145,7 @@ header.header {
       }
     }
     div.grid-6 {
-      float: right;
-      text-align: right;
+      align-items: center;
       a.post {
         @extend .btn;
         width: 120px;
@@ -351,7 +355,7 @@ form {
     border: 1px solid $gray;
     border-radius: 5px;
     font-family: "HIragino Kaku Gothic Pro", "YuGothic";
-    color: #666;
+    color: $darkGray;
   }
   input[type="submit"] {
     @extend .transition;
@@ -409,33 +413,45 @@ footer {
 .contents {
   background: white;
   padding: 0 20px;
-}
-
-// 詳細・編集・削除
-.contents-edit {
-  margin-bottom: 60px;
-   a{
-    font-size: 20px;
-    padding: 5px 0;
+  border-bottom: 1px solid rgba($color: $darkGray, $alpha: .2);
+  // 詳細・編集・削除
+  
+  .contents-edit {
+    margin-bottom: 40px;
+    a{
+      font-size: 20px;
+      padding: 5px;
+      margin: 10px 0;
+      border-radius: 3px;
+      display: block;
+      background: aquamarine;
+      opacity: 0.9;
+      width: fit-content;
+    }
+    p {
+      margin: 0;
+      a.favorite {
+        background: antiquewhite;
+      }
+      a.nofavorite {
+        background: $darkGray;
+      }
+    }
+  }
+  .contents-text {
+    border: 1px solid $darkGray;
+    width: 560px;
     border-radius: 3px;
-  }
-  p {
-    margin: 0;
-  }
-}
-.contents-text {
-  border: 1px solid $darkGray;
-  width: 560px;
-  border-radius: 3px;
-  padding: 5px 10px;
-  p {
-    margin: 0;
+    padding: 5px 10px;
+    p {
+      margin: 0;
+    }
   }
 }
 
 // フェードイン機能
 .fade{
-  animation: fadeIn 1s linear 0.1s 1 normal;
+  animation: fadeIn 1s linear 0s 1 normal;
 }
 @keyframes fadeIn { 
   0% {opacity: 0} /*アニメーション開始時は不透明度0%*/
@@ -458,4 +474,41 @@ footer {
 .user_nav span{
   text-align: center;
   margin: 0;
+}
+
+// フラッシュメッセージのスタイル
+.notifications {
+  margin-bottom: 10px;
+  color: $dark;
+  text-align: center;
+  // 成功時
+  .notice {
+    background-color: $accent;
+  }
+  // 失敗時
+  .alert {
+    background-color: orange;
+  }
+}
+.notifications2 {
+  height: 20px;
+}
+
+.contents__btn {
+  .resarch {
+    background: aquamarine;
+    color: midnightblue;
+    font-size: 24px;
+  }
+  .allmovies {
+    background: aquamarine;
+    color: midnightblue;
+    border-radius: 10px;
+    padding: 10px;
+    margin-bottom: 20px;
+    display: inline-block;
+    &:hover {
+      background-color: lighten($accent, 10%);
+    }
+  }
 }

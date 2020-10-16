@@ -8,10 +8,10 @@ class User < ApplicationRecord
   has_many :favorite_movies, through: :favorites, source: :movie
 
   with_options presence: true do
-  validates :nickname
+  validates :nickname, length: { maximum: 8 }
   validates :email, uniqueness: {case_sensitive: true},
   format: {with: /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i}
-  validates :password
+  validates :password, confirmation: true, length: { minimum: 6 }
   validates :password_confirmation
   end
 end

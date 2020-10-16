@@ -1,5 +1,6 @@
 <div class="contents row">
   <div class="container">
+  <%= render partial: 'layouts/error_form', locals: { movie: @movie } %>
     <%= form_with(model: @movie, local: true) do |form| %>
       <h3>
         投稿する
