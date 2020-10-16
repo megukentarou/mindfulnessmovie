@@ -22,6 +22,19 @@ ja:
             password_confirmation:
               blank: "が入力されていません。"
               confirmation: "とパスワードの内容とあっていません。"
+        movie:
+          title:
+          blank: "が入力されていません。"
+          too_long: "は%{count}文字以下に設定して下さい。"
+          text:
+          blank: "が入力されていません。"
+          too_long: "は%{count}文字以下に設定して下さい。"
+          url:
+          blank: "が入力されていません。"
+          wrong_length: "は11文字で入力して下さい。"
+          time: 
+          blank: "が入力されていません。"
+          not_a_number: "時間の長さを選択して下さい。"
     attributes:
       user:
         current_password: "現在のパスワード"
@@ -30,6 +43,11 @@ ja:
         password_confirmation: "確認用パスワード"
         remember_me: "ログインを記憶する"
         nickname: "ニックネーム(8文字以内)"
+      movie:
+        title: "動画のタイトル"
+        text:  "動画の説明"
+        url:   "動画のURL"
+        time:  "動画の長さ"
     models:
       user: "ユーザ"
   devise:
