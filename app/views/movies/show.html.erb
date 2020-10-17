@@ -14,10 +14,14 @@
       <% end %>
       <% if user_signed_in? %>
         <% if @movie.favorited_by?(current_user) %> <!-- ログインしているユーザーがファボしたかどうかで分岐 -->
-          <p><span>お気に入りから解除<%=link_to movie.favorites.count, movie_favorites_path(@movie.id), method: :delete %></p>
+          <p><%=link_to "お気に入りから解除", movie_favorites_path(@movie.id), method: :delete, class: :nofavorite %></p>
         <% else %>
-          <p><span>お気に入り登録する</span><%=link_to @movie.favorites.count, movie_favorites_path(@movie.id), method: :post %></p>
+          <p><%=link_to "お気に入り登録する", movie_favorites_path(@movie.id), method: :post, class: :favorite %></p>
         <% end %>
+      <% else%>
+        <%= link_to "ログイン", new_user_session_path, class: 'post' %>
+        <%= link_to "新規登録", new_user_registration_path, class: 'post' %>
+        <p>※ユーザー登録するとお好みの動画をお気に入り登録できます</p>
       <% end %>
     </div>
   </div>

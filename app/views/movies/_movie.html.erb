@@ -3,9 +3,6 @@
   <div class="contents-movie">
     <iframe width="560" height="315" src="https://www.youtube.com/embed/<%= movie.url%>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
   </div>
-  <div class="contents-text">
-    <span>動画の説明<%= simple_format(movie.text) %></span>
-  </div>
   <div class="contents-edit">
     <%= link_to '詳細を見る', "/movies/#{movie.id}", method: :get %>
     <% if user_signed_in? && current_user.id == movie.user_id %>
