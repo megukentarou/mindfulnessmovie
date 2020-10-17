@@ -45,7 +45,7 @@
             </li>
           </ul>
           </span>
-          <% if user_signed_in? %>
+          <% if current_user.id == 1 %>
             <%= link_to  "投稿", "/movies/new", class: "post" %>
           <% end %>
         </div>
