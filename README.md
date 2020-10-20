@@ -76,5 +76,3 @@ https://drive.google.com/file/d/13LzzKahjCm4qN5VVieaDOnfPK9rgJbDW/view?usp=shari
 
 ## URL
 http://54.250.80.236/
-
-* ...
