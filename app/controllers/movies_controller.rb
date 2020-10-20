@@ -5,7 +5,6 @@ class MoviesController < ApplicationController
   def index
     if params[:time]
       @movies = Movie.where('time LIKE ?', "%#{params[:time]}%").order("created_at DESC").page(params[:page]).per(8)
-      flash[:notice] = "一覧（TOP）画面に戻りました。"
     else
       @movies = Movie.all.order("created_at DESC").page(params[:page]).per(8)
     end
