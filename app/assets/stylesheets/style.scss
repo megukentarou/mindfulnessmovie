@@ -218,7 +218,7 @@ header.header {
 div.contents.row {
   padding-top: 20px;
   padding-bottom: 60px;
-  background: #57C3E9;
+  background: #57C3E938;
   h2 {
     @include boxBase(20px 0, 0);
     font-weight: normal;
@@ -424,8 +424,8 @@ footer {
       margin: 10px 0;
       border-radius: 3px;
       display: block;
-      background: aquamarine;
-      opacity: 0.9;
+      background: #ddddddab;
+      opacity: 0.8;
       width: fit-content;
     }
     p {
@@ -434,7 +434,7 @@ footer {
         background: antiquewhite;
       }
       a.nofavorite {
-        background: $darkGray;
+        background: #00ff00a3;
       }
     }
   }
@@ -496,13 +496,13 @@ footer {
 
 .contents__btn {
   .resarch {
-    background: aquamarine;
-    color: midnightblue;
+    background: #0095ff73;
+    color: #191970a6;
     font-size: 24px;
   }
   .allmovies {
-    background: aquamarine;
-    color: midnightblue;
+    background: #0095ff73;
+    color: #191970a6;
     border-radius: 10px;
     padding: 10px;
     margin-bottom: 20px;
