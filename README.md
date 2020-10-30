@@ -24,9 +24,9 @@ http://54.250.80.236/
 
 ・投稿、編集、削除は管理人のIDでのみ行える様にしています
 
-* version
-Ruby 2.5.1
-Rails 5.2.4.4
+## version
+・Ruby 2.5.1
+・Rails 5.2.4.4
 
 # my-mindfulness DB設計
 
